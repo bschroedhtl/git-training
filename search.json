@@ -443,7 +443,7 @@
     "href": "content/chapter-10.html",
     "title": "10  Exercises",
     "section": "",
-    "text": "10.1 Ask the Git tutor\nWork in pairs (person A and person B).\nPractice more on https://learngitbranching.js.org. It shows what happens to your branches as a picture.\nStuck with an exercise, an error message or a command? Ask the Git tutor chat. It knows this tutorial and answers in German or English:\nhttps://novedu.at/m1fmu0jlm4",
+    "text": "10.1 Ask the Git tutor\nWork in pairs (person A and person B).\nPractice more on https://learngitbranching.js.org. It shows what happens to your branches as a picture.\nStuck with an exercise, an error message or a command? Ask the Git tutor chat. It knows this tutorial and answers in German or English:",
     "crumbs": [
       "Practice",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
@@ -454,7 +454,7 @@
     "href": "content/chapter-10.html#ask-the-git-tutor",
     "title": "10  Exercises",
     "section": "",
-    "text": "Write what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises above, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
+    "text": "TipGit tutor\n\n\n\nHints and guiding questions first, in German or English.\n\n▶ Ask the Git tutor on novedu.at\n\n\n\n\nWrite what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises above, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
     "crumbs": [
       "Practice",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
@@ -465,7 +465,7 @@
     "href": "content/chapter-10.html#check-what-you-learned",
     "title": "10  Exercises",
     "section": "10.2 Check what you learned",
-    "text": "10.2 Check what you learned\nAnswer eight questions about this tutorial in the Novedu quiz. You write your answers in your own words, in English or German, and you get feedback for each answer:\nhttps://novedu.at/fvlwtss7pl\n💡 The questions are about the why, not only about the commands. Explain your answer like you would explain it to a team mate.",
+    "text": "10.2 Check what you learned\nAnswer eight questions about this tutorial in the Novedu quiz. You write your answers in your own words, in English or German, and you get feedback for each answer:\n\n\n\n\n\n\nNoteQuiz: Git basics\n\n\n\n\n▶ Take the quiz on novedu.at\n\n\n\n💡 The questions are about the why, not only about the commands. Explain your answer like you would explain it to a team mate.",
     "crumbs": [
       "Practice",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"

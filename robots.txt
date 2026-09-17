@@ -1,0 +1,1 @@
+Sitemap: https://bschroedhtl.github.io/git-training/sitemap.xml
