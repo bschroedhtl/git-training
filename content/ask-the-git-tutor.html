@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Branches – Git</title>
+<title>Ask the Git tutor – Git</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -71,8 +36,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/chapter-08.html" rel="next">
-<link href="../content/chapter-06.html" rel="prev">
+<link href="../content/chapter-01.html" rel="next">
+<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -83,6 +48,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-aae1decb7c0a57a761683734fafe0f97.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/quarto-novedu-1.0.0/novedu.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -125,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/chapter-07.html">Teamwork</a></li><li class="breadcrumb-item"><a href="../content/chapter-07.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/ask-the-git-tutor.html">Ask the Git tutor</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/ask-the-git-tutor.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/ask-the-git-tutor.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Ask the Git tutor</span></a>
   </div>
 </li>
@@ -223,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/chapter-07.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/chapter-07.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Branches</span></span></a>
   </div>
 </li>
@@ -286,26 +252,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#create-a-branch" id="toc-create-a-branch" class="nav-link active" data-scroll-target="#create-a-branch"><span class="header-section-number">7.1</span> Create a branch</a></li>
-  <li><a href="#switch-between-branches" id="toc-switch-between-branches" class="nav-link" data-scroll-target="#switch-between-branches"><span class="header-section-number">7.2</span> Switch between branches</a></li>
-  <li><a href="#keep-your-branch-up-to-date" id="toc-keep-your-branch-up-to-date" class="nav-link" data-scroll-target="#keep-your-branch-up-to-date"><span class="header-section-number">7.3</span> Keep your branch up to date</a></li>
-  <li><a href="#merge-your-branch-into-main" id="toc-merge-your-branch-into-main" class="nav-link" data-scroll-target="#merge-your-branch-into-main"><span class="header-section-number">7.4</span> Merge your branch into main</a></li>
-  <li><a href="#two-kinds-of-merges" id="toc-two-kinds-of-merges" class="nav-link" data-scroll-target="#two-kinds-of-merges"><span class="header-section-number">7.5</span> Two kinds of merges</a></li>
-  <li><a href="#what-about-rebase" id="toc-what-about-rebase" class="nav-link" data-scroll-target="#what-about-rebase"><span class="header-section-number">7.6</span> What about rebase?</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/chapter-07.html">Teamwork</a></li><li class="breadcrumb-item"><a href="../content/chapter-07.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Branches</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="7-branches" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Branches</span></span></h1>
+<h1 class="title"><span id="ask-the-git-tutor" class="quarto-section-identifier">Ask the Git tutor</span></h1>
 </div>
 
 
@@ -322,81 +277,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><img src="pics/branch-merge.png" class="img-fluid" style="width:30.0%"></p>
-<p>If everybody works directly on <code>main</code>, you constantly get in each other’s way. That’s why each team member works on their own <strong>branch</strong>:</p>
+<p>Stuck with a command, an error message or an exercise? Ask the Git tutor chat. It knows this tutorial and answers in German or English. Keep it open while you work through the chapters:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Git tutor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hints and guiding questions first, in German or English.</p>
+<div class="novedu-cta novedu-cta-tutor">
+<p><a href="https://novedu.at/m1fmu0jlm4">▶ Ask the Git tutor on novedu.at</a></p>
+</div>
+</div>
+</div>
 <ul>
-<li><code>main</code> is the main line. It should always contain a <strong>working</strong> version of the project.</li>
-<li>For each new feature or bug fix, you create a new branch from <code>main</code>.</li>
-<li>You commit on your branch. Your team mates don’t see your unfinished work on <code>main</code>.</li>
-<li>When the work is done, the branch is <strong>merged</strong> back into <code>main</code>.</li>
+<li>Write what you already tried and what Git printed. Then you get a useful answer.</li>
+<li>For the exercises in <a href="../content/chapter-10.html#10-exercises">chapter 10</a>, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.</li>
+<li><span class="emoji" data-emoji="warning">⚠️</span> Never paste passwords or tokens into the chat.</li>
 </ul>
-<p>In the picture, person A and person B both start from the same version of <code>main</code>. Each of them works on their own branch. In the end, both branches are merged, and <code>main</code> contains the work of A <strong>and</strong> B.</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> A branch doesn’t prevent merge conflicts. It only moves them to the moment when you merge. The longer a branch lives, the more conflicts you get. So <strong>merge often</strong>.</p>
-<section id="create-a-branch" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="create-a-branch"><span class="header-section-number">7.1</span> Create a branch</h2>
-<p>First make sure you are on <code>main</code> and have the newest version:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Create a new branch and switch to it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="at">-c</span> <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Choose a name that describes the work, e.g.&nbsp;<code>login-page</code> or <code>12-fix-menu-crash</code>.</p>
-<p>Now edit, stage and commit as usual. Share the branch on GitHub:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="switch-between-branches" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="switch-between-branches"><span class="header-section-number">7.2</span> Switch between branches</h2>
-<p>Show all local branches. The <code>*</code> marks the branch you are on:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Also show the branches on GitHub (they start with <code>remotes/origin/</code>):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-a</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Switch to another branch:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In VS Code, the name of the current branch is shown in the bottom left corner. Click on it to switch branches.</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> Commit or stash your changes before you switch branches.</p>
-</section>
-<section id="keep-your-branch-up-to-date" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="keep-your-branch-up-to-date"><span class="header-section-number">7.3</span> Keep your branch up to date</h2>
-<p><img src="pics/git-branches-merge.png" class="img-fluid" style="width:50.0%"></p>
-<p><em>Reference</em>: <a href="https://www.nobledesktop.com/learn/git/git-branches" class="uri">https://www.nobledesktop.com/learn/git/git-branches</a> (in this picture, <code>main</code> has its old name <code>master</code>)</p>
-<p>While you work on your branch, your team mates merge their work into <code>main</code>. Get their changes into your branch regularly:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull                     <span class="co"># get the newest main from GitHub</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge main               <span class="co"># copy the changes from main into your branch</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If there are conflicts, solve them now (see <a href="../content/chapter-08.html#8-merge-conflicts">chapter 8</a>). Then push your branch:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>It’s better to solve conflicts on <strong>your</strong> branch than on <code>main</code>.</p>
-</section>
-<section id="merge-your-branch-into-main" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="merge-your-branch-into-main"><span class="header-section-number">7.4</span> Merge your branch into main</h2>
-<p>In a team, we merge branches with a <strong>pull request</strong> on GitHub (see <a href="../content/chapter-09.html#9-pull-requests-and-issues">chapter 9</a>). Then your team can review your work first.</p>
-<p>Without a pull request, you can merge on your computer:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch main</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><span class="emoji" data-emoji="bulb">💡</span> After every merge, test <code>main</code>. Does everything still work?</p>
-</section>
-<section id="two-kinds-of-merges" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="two-kinds-of-merges"><span class="header-section-number">7.5</span> Two kinds of merges</h2>
-<p>When you merge, Git sometimes prints <code>Fast-forward</code> and sometimes creates a new commit. Both are fine.</p>
-<p><strong>Fast-forward</strong>: <code>main</code> has <strong>no new commits</strong> since you created your branch. Git simply moves <code>main</code> forward to the newest commit of your branch. No new commit is created.</p>
-<p><strong>Merge commit</strong>: <code>main</code> <strong>and</strong> your branch both have new commits. Git combines them in a new <strong>merge commit</strong>. In <code>git log --oneline --graph</code> you see two lines that join. Git opens your editor for the commit message: check it, save and close it.</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> On GitHub, the <strong>Merge pull request</strong> button creates a merge commit by default. So the history always shows which pull request brought in which changes.</p>
-</section>
-<section id="what-about-rebase" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="what-about-rebase"><span class="header-section-number">7.6</span> What about rebase?</h2>
-<p>Maybe you have seen <code>git rebase</code> in a tutorial or on GitHub. It is another way to get the changes from <code>main</code> into your branch:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> switch <span class="op">&lt;</span>branch-name<span class="op">&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rebase main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Rebase takes your commits and puts them <strong>on top of</strong> the newest <code>main</code>. The history becomes one straight line, without a merge commit.</p>
-<p>In this course we use <code>git merge</code> (see <a href="#keep-your-branch-up-to-date">Keep your branch up to date</a>). Merging shows the history as it really happened, and it never changes commits that already exist.</p>
-<p><span class="emoji" data-emoji="warning">⚠️</span> Never rebase commits that you have already pushed, or that somebody else has. Rebase throws your old commits away and creates <strong>new</strong> ones. To push them you would need <code>git push --force</code>, and that deletes the work of your team mates.</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> Started a rebase and something went wrong? <code>git rebase --abort</code> brings back the state from before.</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> On GitHub, the <strong>Merge</strong> button has a dropdown with three options: <em>Create a merge commit</em> (what we use), <em>Squash and merge</em> (all commits of the branch become one) and <em>Rebase and merge</em> (puts the commits on top of <code>main</code>). Use the first one, unless your team agreed on something else.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -808,13 +712,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/chapter-06.html" class="pagination-link" aria-label="Undoing changes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Undoing changes</span></span>
+      <a href="../index.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/chapter-08.html" class="pagination-link" aria-label="Merge conflicts">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Merge conflicts</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../content/chapter-01.html" class="pagination-link" aria-label="Why version control?">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why version control?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

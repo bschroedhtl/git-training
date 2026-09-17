@@ -125,6 +125,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/ask-the-git-tutor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ask the Git tutor</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -251,8 +257,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ask-the-git-tutor" id="toc-ask-the-git-tutor" class="nav-link active" data-scroll-target="#ask-the-git-tutor"><span class="header-section-number">10.1</span> Ask the Git tutor</a></li>
-  <li><a href="#check-what-you-learned" id="toc-check-what-you-learned" class="nav-link" data-scroll-target="#check-what-you-learned"><span class="header-section-number">10.2</span> Check what you learned</a></li>
+  <li><a href="#check-what-you-learned" id="toc-check-what-you-learned" class="nav-link active" data-scroll-target="#check-what-you-learned"><span class="header-section-number">10.1</span> Check what you learned</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +283,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Work in pairs (person A and person B).</p>
+<p>Work in pairs (person A and person B). If you are stuck, ask the <a href="../content/ask-the-git-tutor.html#ask-the-git-tutor">Git tutor</a>.</p>
 <ol type="1">
 <li><strong>Setup</strong>: both of you set up Git (<a href="../content/chapter-02.html#2-setup">chapter 2</a>). Check your settings with <code>git config --global --list</code>.</li>
 <li><strong>First commits</strong>: person A creates a new repository on GitHub and adds person B as a collaborator. Both of you clone it. Each of you creates a file with your name, commits it and pushes it. Look at the history with <code>git log --oneline</code>.</li>
@@ -290,33 +295,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Time travel</strong>: look at the project as it was two commits ago with <code>git switch --detach HEAD~2</code>. What does <code>git status</code> say? Go back with <code>git switch main</code>. Then get one file back from two commits ago with <code>git restore --source=HEAD~2 &lt;file&gt;</code> and commit it.</li>
 </ol>
 <p>Practice more on <a href="https://learngitbranching.js.org" class="uri">https://learngitbranching.js.org</a>. It shows what happens to your branches as a picture.</p>
-<section id="ask-the-git-tutor" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="ask-the-git-tutor"><span class="header-section-number">10.1</span> Ask the Git tutor</h2>
-<p>Stuck with an exercise, an error message or a command? Ask the Git tutor chat. It knows this tutorial and answers in German or English:</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Git tutor
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Hints and guiding questions first, in German or English.</p>
-<div class="novedu-cta novedu-cta-tutor">
-<p><a href="https://novedu.at/m1fmu0jlm4">▶ Ask the Git tutor on novedu.at</a></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Write what you already tried and what Git printed. Then you get a useful answer.</li>
-<li>For the exercises above, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.</li>
-<li><span class="emoji" data-emoji="warning">⚠️</span> Never paste passwords or tokens into the chat.</li>
-</ul>
-</section>
-<section id="check-what-you-learned" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="check-what-you-learned"><span class="header-section-number">10.2</span> Check what you learned</h2>
+<section id="check-what-you-learned" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="check-what-you-learned"><span class="header-section-number">10.1</span> Check what you learned</h2>
 <p>Answer eight questions about this tutorial in the Novedu quiz. You write your answers in your own words, in English or German, and you get feedback for each answer:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">

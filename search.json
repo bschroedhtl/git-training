@@ -4,9 +4,19 @@
     "href": "index.html",
     "title": "Git",
     "section": "",
-    "text": "Introduction\n\nThis book is a Git tutorial for beginners. It shows you how to save the history of a project, how to share it on GitHub and how to work in a team with branches and pull requests.\n\nBasics (chapters 1 to 6): install Git, make commits, push and pull, and undo mistakes.\nTeamwork (chapters 7 to 9): branches, merge conflicts, pull requests and issues.\nPractice (chapter 10): exercises for pairs, the Git tutor chat and a quiz.\nBackground (chapter 11): why Git works the way it does. This chapter is optional.\n\nThe commands are shown for the terminal. PowerShell on Windows works fine. Where it helps, the book also shows how to do the same in VS Code.",
+    "text": "Introduction\n\nThis book is a Git tutorial for beginners. It shows you how to save the history of a project, how to share it on GitHub and how to work in a team with branches and pull requests.\nIf you get stuck while reading, ask the Git tutor chat. The next page has the link.\n\nBasics (chapters 1 to 6): install Git, make commits, push and pull, and undo mistakes.\nTeamwork (chapters 7 to 9): branches, merge conflicts, pull requests and issues.\nPractice (chapter 10): exercises for pairs and a quiz to check what you learned.\nBackground (chapter 11): why Git works the way it does. This chapter is optional.\n\nThe commands are shown for the terminal. PowerShell on Windows works fine. Where it helps, the book also shows how to do the same in VS Code.",
     "crumbs": [
       "Introduction"
+    ]
+  },
+  {
+    "objectID": "content/ask-the-git-tutor.html",
+    "href": "content/ask-the-git-tutor.html",
+    "title": "Ask the Git tutor",
+    "section": "",
+    "text": "Stuck with a command, an error message or an exercise? Ask the Git tutor chat. It knows this tutorial and answers in German or English. Keep it open while you work through the chapters:\n\n\n\n\n\n\nTipGit tutor\n\n\n\nHints and guiding questions first, in German or English.\n\n▶ Ask the Git tutor on novedu.at\n\n\n\n\nWrite what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises in chapter 10, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
+    "crumbs": [
+      "Ask the Git tutor"
     ]
   },
   {
@@ -443,18 +453,7 @@
     "href": "content/chapter-10.html",
     "title": "10  Exercises",
     "section": "",
-    "text": "10.1 Ask the Git tutor\nWork in pairs (person A and person B).\nPractice more on https://learngitbranching.js.org. It shows what happens to your branches as a picture.\nStuck with an exercise, an error message or a command? Ask the Git tutor chat. It knows this tutorial and answers in German or English:",
-    "crumbs": [
-      "Practice",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
-    ]
-  },
-  {
-    "objectID": "content/chapter-10.html#ask-the-git-tutor",
-    "href": "content/chapter-10.html#ask-the-git-tutor",
-    "title": "10  Exercises",
-    "section": "",
-    "text": "TipGit tutor\n\n\n\nHints and guiding questions first, in German or English.\n\n▶ Ask the Git tutor on novedu.at\n\n\n\n\nWrite what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises above, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
+    "text": "10.1 Check what you learned\nWork in pairs (person A and person B). If you are stuck, ask the Git tutor.\nPractice more on https://learngitbranching.js.org. It shows what happens to your branches as a picture.\nAnswer eight questions about this tutorial in the Novedu quiz. You write your answers in your own words, in English or German, and you get feedback for each answer:\n💡 The questions are about the why, not only about the commands. Explain your answer like you would explain it to a team mate.",
     "crumbs": [
       "Practice",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
@@ -464,8 +463,8 @@
     "objectID": "content/chapter-10.html#check-what-you-learned",
     "href": "content/chapter-10.html#check-what-you-learned",
     "title": "10  Exercises",
-    "section": "10.2 Check what you learned",
-    "text": "10.2 Check what you learned\nAnswer eight questions about this tutorial in the Novedu quiz. You write your answers in your own words, in English or German, and you get feedback for each answer:\n\n\n\n\n\n\nNoteQuiz: Git basics\n\n\n\n\n▶ Take the quiz on novedu.at\n\n\n\n💡 The questions are about the why, not only about the commands. Explain your answer like you would explain it to a team mate.",
+    "section": "",
+    "text": "NoteQuiz: Git basics\n\n\n\n\n▶ Take the quiz on novedu.at",
     "crumbs": [
       "Practice",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
