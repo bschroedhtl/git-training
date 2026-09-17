@@ -1,0 +1,517 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Git",
+    "section": "",
+    "text": "Introduction\n\nThis book is a Git tutorial for beginners. It shows you how to save the history of a project, how to share it on GitHub and how to work in a team with branches and pull requests.\n\nBasics (chapters 1 to 6): install Git, make commits, push and pull, and undo mistakes.\nTeamwork (chapters 7 to 9): branches, merge conflicts, pull requests and issues.\nPractice (chapter 10): exercises for pairs, the Git tutor chat and a quiz.\nBackground (chapter 11): why Git works the way it does. This chapter is optional.\n\nThe commands are shown for the terminal. PowerShell on Windows works fine. Where it helps, the book also shows how to do the same in VS Code.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "content/chapter-01.html",
+    "href": "content/chapter-01.html",
+    "title": "1  Why version control?",
+    "section": "",
+    "text": "1.1 Important words\nImagine you work on a project with three team mates. Without a tool, you end up with files like project-final.zip, project-final-v2.zip and project-final-REALLY-final.zip. Nobody knows which version is the newest, and changes get lost.\nGit solves this problem:\n💡 Git and GitHub are not the same thing. Git is the program on your computer. GitHub is a website that hosts Git repositories.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why version control?</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-01.html#important-words",
+    "href": "content/chapter-01.html#important-words",
+    "title": "1  Why version control?",
+    "section": "",
+    "text": "Word\nMeaning\n\n\n\n\nRepository (repo)\nA project folder that Git tracks. It contains all files and the complete history.\n\n\nCommit\nA saved snapshot of your project, with a message that describes the change.\n\n\nRemote\nA copy of the repository on a server, e.g. on GitHub. Its default name is origin.\n\n\nBranch\nA separate line of work. You can work on a branch without disturbing others.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Why version control?</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-02.html",
+    "href": "content/chapter-02.html",
+    "title": "2  Setup",
+    "section": "",
+    "text": "2.1 Install Git\nYou only need to do this once on each computer.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-02.html#install-git",
+    "href": "content/chapter-02.html#install-git",
+    "title": "2  Setup",
+    "section": "",
+    "text": "Windows: download and install Git from https://git-scm.com. Keep the default settings.\nCheck that it works. Open a terminal (PowerShell or the terminal in VS Code) and type:\n\ngit --version",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-02.html#tell-git-who-you-are",
+    "href": "content/chapter-02.html#tell-git-who-you-are",
+    "title": "2  Setup",
+    "section": "2.2 Tell Git who you are",
+    "text": "2.2 Tell Git who you are\nEvery commit stores your name and email address. Use the same email address as in your GitHub account, so GitHub can link your commits to you.\ngit config --global user.name \"Max Mustermann\"\ngit config --global user.email \"max.mustermann@example.com\"\ngit config --global init.defaultBranch main\ngit config --global core.editor \"code --wait\"\n\ninit.defaultBranch main: new repositories use main as the name of the first branch.\ncore.editor: when Git needs a message from you (e.g. for a merge commit, see chapter 7), it opens VS Code. Write or check the message, save and close the tab. Without this setting, Git opens the editor Vim in the terminal, which is hard to use for beginners.\n\n💡 Stuck in Vim? Press Esc, type :wq and press Enter.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-02.html#sign-in-to-github",
+    "href": "content/chapter-02.html#sign-in-to-github",
+    "title": "2  Setup",
+    "section": "2.3 Sign in to GitHub",
+    "text": "2.3 Sign in to GitHub\n\nCreate an account on https://github.com if you don’t have one.\nThe first time you push to GitHub (see chapter 4), a browser window opens and asks you to sign in. After that, Git remembers you.\n\n💡 You cannot use your GitHub password directly in the terminal. Always sign in through the browser window.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-02.html#vs-code",
+    "href": "content/chapter-02.html#vs-code",
+    "title": "2  Setup",
+    "section": "2.4 VS Code",
+    "text": "2.4 VS Code\nVS Code has Git built in. Open the Source Control view (the icon with the branches on the left side, or Ctrl+Shift+G). In this tutorial you learn the terminal commands, but you can do most steps in VS Code as well.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html",
+    "href": "content/chapter-03.html",
+    "title": "3  Your first repository",
+    "section": "",
+    "text": "3.1 Get a repository\nThere are two ways to start:\na) Copy an existing repository from GitHub (this is what you do most of the time):\ngit clone downloads the complete repository including its history into a new folder.\nb) Turn an existing folder into a new repository:\nBoth ways create a hidden folder called .git. This is where Git stores the history. You can see it with ls -Force (PowerShell) or ls -a (Git Bash).\n💡 If there is no .git folder in your project, Git commands don’t work. Git will say fatal: not a git repository.\n⚠️ Never delete or change the .git folder by hand. If you delete it, the whole history is gone.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#get-a-repository",
+    "href": "content/chapter-03.html#get-a-repository",
+    "title": "3  Your first repository",
+    "section": "",
+    "text": "git clone &lt;url&gt;\ncd &lt;folder-name&gt;\n\n\ncd &lt;your-project-folder&gt;\ngit init",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#the-three-areas",
+    "href": "content/chapter-03.html#the-three-areas",
+    "title": "3  Your first repository",
+    "section": "3.2 The three areas",
+    "text": "3.2 The three areas\n\nGit has three areas for your files:\n\nWorking directory: the files you see and edit in your folder.\nStaging area: the changes you have chosen for your next commit.\nRepository: all commits that are saved in the history.\n\nSo saving a change in Git is a two-step process: first you add the change to the staging area, then you commit it.\n💡 A commit is saved only on your computer. Nobody else can see it until you push it (see chapter 4).",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#check-what-has-changed",
+    "href": "content/chapter-03.html#check-what-has-changed",
+    "title": "3  Your first repository",
+    "section": "3.3 Check what has changed",
+    "text": "3.3 Check what has changed\nShow which files are changed, new (untracked) or staged:\ngit status\nShow the changed lines before you stage them:\ngit diff\nShow the changed lines that are already staged:\ngit diff --staged\nIn VS Code, click on a file in the Source Control view to see the changes side by side.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#stage-and-commit",
+    "href": "content/chapter-03.html#stage-and-commit",
+    "title": "3  Your first repository",
+    "section": "3.4 Stage and commit",
+    "text": "3.4 Stage and commit\nAdd one file to the staging area:\ngit add &lt;file&gt;\nAdd all changed and new files to the staging area:\ngit add .\nSave the staged changes as a new commit:\ngit commit -m \"Add login form\"\nIn VS Code: click + next to a file to stage it, write a message and click Commit.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#review-before-you-commit",
+    "href": "content/chapter-03.html#review-before-you-commit",
+    "title": "3  Your first repository",
+    "section": "3.5 Review before you commit",
+    "text": "3.5 Review before you commit\n💡 We always review our changes during staging!\nDon’t just type git add . without looking. Instead:\n\nLook at each changed file with git diff or in VS Code.\nIs the change correct and complete? Then stage it.\nStage all files that belong to one topic and commit them together.\nRepeat with the next topic.\n\nExample: you changed 27 files. 20 of them are for the new login page and 7 fix a bug in the menu. Make two commits, one for each topic.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#write-good-commit-messages",
+    "href": "content/chapter-03.html#write-good-commit-messages",
+    "title": "3  Your first repository",
+    "section": "3.6 Write good commit messages",
+    "text": "3.6 Write good commit messages\nA good commit message tells your team what changed. Your team mates should understand it without looking at the code.\n\n\n\n❌ Bad\n✅ Good\n\n\n\n\nupdate\nAdd validation to registration form\n\n\nfix\nFix crash when user list is empty\n\n\nasdf\nRemove unused images from pics folder\n\n\nchanges from Monday\nTranslate start page to English\n\n\n\nTips:\n\nStart with a verb: Add, Fix, Remove, Change, Update.\nKeep the first line short (about 50 characters).\nIf the commit belongs to a GitHub issue, add the issue number (see chapter 9).",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#look-at-the-history",
+    "href": "content/chapter-03.html#look-at-the-history",
+    "title": "3  Your first repository",
+    "section": "3.7 Look at the history",
+    "text": "3.7 Look at the history\ngit log --oneline\nEach line is one commit: a short commit ID (e.g. 8756b24) and the message. Press q to leave the list.\nTo see the history of all branches as a graph:\ngit log --oneline --graph --all",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-03.html#look-at-a-commit",
+    "href": "content/chapter-03.html#look-at-a-commit",
+    "title": "3  Your first repository",
+    "section": "3.8 Look at a commit",
+    "text": "3.8 Look at a commit\nEvery commit has an ID, e.g. 8756b24. Git also has short names for commits:\n\nHEAD is the commit you are on right now (usually your newest commit).\nHEAD~1 is one commit before HEAD, HEAD~2 is two commits before, and so on.\n\nShow which lines a commit changed:\ngit show HEAD\ngit show 8756b24",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Your first repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-04.html",
+    "href": "content/chapter-04.html",
+    "title": "4  Working with a remote repository",
+    "section": "",
+    "text": "4.1 Push: send your commits to GitHub\nReference: https://medium.com/mindorks/what-is-git-commit-push-pull-log-aliases-fetch-config-clone-56bc52a3601c\nYour commits are only on your computer. To share them, you use a remote repository, e.g. on GitHub.\nWhen you push a new branch for the first time, you have to tell Git where to send it:\nAfter that, git push is enough. In VS Code, click Publish Branch or Sync Changes.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with a remote repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-04.html#push-send-your-commits-to-github",
+    "href": "content/chapter-04.html#push-send-your-commits-to-github",
+    "title": "4  Working with a remote repository",
+    "section": "",
+    "text": "git push\n\ngit push -u origin &lt;branch-name&gt;",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with a remote repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-04.html#pull-get-the-commits-of-your-team-mates",
+    "href": "content/chapter-04.html#pull-get-the-commits-of-your-team-mates",
+    "title": "4  Working with a remote repository",
+    "section": "4.2 Pull: get the commits of your team mates",
+    "text": "4.2 Pull: get the commits of your team mates\ngit pull\n💡 Pull before you start working. Then you always work with the newest version.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with a remote repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-04.html#what-happens-if-your-push-is-rejected",
+    "href": "content/chapter-04.html#what-happens-if-your-push-is-rejected",
+    "title": "4  Working with a remote repository",
+    "section": "4.3 What happens if your push is rejected?",
+    "text": "4.3 What happens if your push is rejected?\nIf a team mate pushed something since your last pull, GitHub rejects your push:\n! [rejected]        main -&gt; main (fetch first)\nerror: failed to push some refs to 'https://github.com/...'\nhint: Updates were rejected because the remote contains work that you do not have locally.\nThis is not an error in your code. Git just wants you to get the new commits first:\n\ngit pull (Git combines their commits with yours).\ngit push\n\nUsually this works without problems. If you and your team mate changed the same lines of the same file, you get a merge conflict (see chapter 8).",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with a remote repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-04.html#daily-workflow",
+    "href": "content/chapter-04.html#daily-workflow",
+    "title": "4  Working with a remote repository",
+    "section": "4.4 Daily workflow",
+    "text": "4.4 Daily workflow\ngit pull                     # 1. get the newest version\n# ... edit your files ...\ngit status                   # 2. what has changed?\ngit diff                     # 3. review your changes\ngit add &lt;file&gt;               # 4. stage\ngit commit -m \"Message\"      # 5. commit\ngit push                     # 6. share",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with a remote repository</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-05.html",
+    "href": "content/chapter-05.html",
+    "title": "5  .gitignore",
+    "section": "",
+    "text": "5.1 You already committed a file by mistake?\nSome files should never go into the repository, for example:\nCreate a file called .gitignore in the main folder of the repository. Write one file name or pattern in each line:\nGit ignores these files. They don’t show up in git status anymore.\n💡 Use https://www.toptal.com/developers/gitignore to create a .gitignore file for your programming language and IDE.\n⚠️ .gitignore only works for files that are not yet committed. Create it at the beginning of the project.\nFirst add the file to .gitignore. Then remove it from the repository, but keep it on your computer:\n--cached means: remove it from Git only, not from your disk.\n⚠️ The file is still in the old commits. If you committed a password or another secret, removing the file is not enough. Change the password!\nGit also ignores empty folders. A folder only appears in the repository when there is at least one file in it.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>.gitignore</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-05.html#you-already-committed-a-file-by-mistake",
+    "href": "content/chapter-05.html#you-already-committed-a-file-by-mistake",
+    "title": "5  .gitignore",
+    "section": "",
+    "text": "git rm --cached &lt;file&gt;                 # for a file\ngit rm -r --cached node_modules/       # for a folder\ngit commit -m \"Remove node_modules from repository\"",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>.gitignore</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-06.html",
+    "href": "content/chapter-06.html",
+    "title": "6  Undoing changes",
+    "section": "",
+    "text": "6.1 Look at an old version: detached HEAD\nEverybody makes mistakes. Here is how to fix them:\n💡 git restore . only resets files that Git already knows. New (untracked) files stay. Use git clean for them.\n💡 After git restore --source=..., the old version is in your working directory like a normal change. Commit it if you want to keep it.\n⚠️ Only use --amend for commits that you have not pushed yet. For pushed commits, use git revert. It creates a new commit that undoes the old one, so the history of your team mates stays correct.\nYou can go back in time and look at the whole project as it was in an old commit:\nMany tutorials use git checkout &lt;commit-id&gt; for this. It does the same.\nNow you are in the detached HEAD state. This means you are not on a branch. git status shows HEAD detached at &lt;commit-id&gt;, and VS Code shows the commit ID instead of a branch name in the bottom left corner.\nYou can look at the files and run the code, but don’t work here. Commits in this state don’t belong to any branch, and they get lost when you switch away.\nGo back to your branch:\n💡 Did you make commits in detached HEAD and want to keep them? Create a branch before you switch away: git switch -c &lt;new-branch-name&gt;.",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Undoing changes</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-06.html#look-at-an-old-version-detached-head",
+    "href": "content/chapter-06.html#look-at-an-old-version-detached-head",
+    "title": "6  Undoing changes",
+    "section": "",
+    "text": "git switch --detach &lt;commit-id&gt;\n\n\n\n\ngit switch main",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Undoing changes</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-06.html#put-changes-aside-stash",
+    "href": "content/chapter-06.html#put-changes-aside-stash",
+    "title": "6  Undoing changes",
+    "section": "6.2 Put changes aside: stash",
+    "text": "6.2 Put changes aside: stash\nSometimes you have unfinished changes, but you need to pull or switch to another branch. Git may not let you do that. Put your changes aside with:\ngit stash\nNow your working directory is clean. Do what you need to do (e.g. git pull). Then get your changes back:\ngit stash pop\n💡 If your stashed changes and the pulled changes touch the same lines, you get a merge conflict during git stash pop. Solve it like any other conflict (see chapter 8).",
+    "crumbs": [
+      "Basics",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Undoing changes</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html",
+    "href": "content/chapter-07.html",
+    "title": "7  Branches",
+    "section": "",
+    "text": "7.1 Create a branch\nIf everybody works directly on main, you constantly get in each other’s way. That’s why each team member works on their own branch:\nIn the picture, person A and person B both start from the same version of main. Each of them works on their own branch. In the end, both branches are merged, and main contains the work of A and B.\n💡 A branch doesn’t prevent merge conflicts. It only moves them to the moment when you merge. The longer a branch lives, the more conflicts you get. So merge often.\nFirst make sure you are on main and have the newest version:\nCreate a new branch and switch to it:\nChoose a name that describes the work, e.g. login-page or 12-fix-menu-crash.\nNow edit, stage and commit as usual. Share the branch on GitHub:",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html#create-a-branch",
+    "href": "content/chapter-07.html#create-a-branch",
+    "title": "7  Branches",
+    "section": "",
+    "text": "git switch main\ngit pull\n\ngit switch -c &lt;branch-name&gt;\n\n\ngit push -u origin &lt;branch-name&gt;",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html#switch-between-branches",
+    "href": "content/chapter-07.html#switch-between-branches",
+    "title": "7  Branches",
+    "section": "7.2 Switch between branches",
+    "text": "7.2 Switch between branches\nShow all local branches. The * marks the branch you are on:\ngit branch\nAlso show the branches on GitHub (they start with remotes/origin/):\ngit branch -a\nSwitch to another branch:\ngit switch &lt;branch-name&gt;\nIn VS Code, the name of the current branch is shown in the bottom left corner. Click on it to switch branches.\n💡 Commit or stash your changes before you switch branches.",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html#keep-your-branch-up-to-date",
+    "href": "content/chapter-07.html#keep-your-branch-up-to-date",
+    "title": "7  Branches",
+    "section": "7.3 Keep your branch up to date",
+    "text": "7.3 Keep your branch up to date\n\nReference: https://www.nobledesktop.com/learn/git/git-branches (in this picture, main has its old name master)\nWhile you work on your branch, your team mates merge their work into main. Get their changes into your branch regularly:\ngit switch main\ngit pull                     # get the newest main from GitHub\ngit switch &lt;branch-name&gt;\ngit merge main               # copy the changes from main into your branch\nIf there are conflicts, solve them now (see chapter 8). Then push your branch:\ngit push\nIt’s better to solve conflicts on your branch than on main.",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html#merge-your-branch-into-main",
+    "href": "content/chapter-07.html#merge-your-branch-into-main",
+    "title": "7  Branches",
+    "section": "7.4 Merge your branch into main",
+    "text": "7.4 Merge your branch into main\nIn a team, we merge branches with a pull request on GitHub (see chapter 9). Then your team can review your work first.\nWithout a pull request, you can merge on your computer:\ngit switch main\ngit pull\ngit merge &lt;branch-name&gt;\ngit push\n💡 After every merge, test main. Does everything still work?",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html#two-kinds-of-merges",
+    "href": "content/chapter-07.html#two-kinds-of-merges",
+    "title": "7  Branches",
+    "section": "7.5 Two kinds of merges",
+    "text": "7.5 Two kinds of merges\nWhen you merge, Git sometimes prints Fast-forward and sometimes creates a new commit. Both are fine.\nFast-forward: main has no new commits since you created your branch. Git simply moves main forward to the newest commit of your branch. No new commit is created.\nMerge commit: main and your branch both have new commits. Git combines them in a new merge commit. In git log --oneline --graph you see two lines that join. Git opens your editor for the commit message: check it, save and close it.\n💡 On GitHub, the Merge pull request button creates a merge commit by default. So the history always shows which pull request brought in which changes.",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-07.html#what-about-rebase",
+    "href": "content/chapter-07.html#what-about-rebase",
+    "title": "7  Branches",
+    "section": "7.6 What about rebase?",
+    "text": "7.6 What about rebase?\nMaybe you have seen git rebase in a tutorial or on GitHub. It is another way to get the changes from main into your branch:\ngit switch &lt;branch-name&gt;\ngit rebase main\nRebase takes your commits and puts them on top of the newest main. The history becomes one straight line, without a merge commit.\nIn this course we use git merge (see Keep your branch up to date). Merging shows the history as it really happened, and it never changes commits that already exist.\n⚠️ Never rebase commits that you have already pushed, or that somebody else has. Rebase throws your old commits away and creates new ones. To push them you would need git push --force, and that deletes the work of your team mates.\n💡 Started a rebase and something went wrong? git rebase --abort brings back the state from before.\n💡 On GitHub, the Merge button has a dropdown with three options: Create a merge commit (what we use), Squash and merge (all commits of the branch become one) and Rebase and merge (puts the commits on top of main). Use the first one, unless your team agreed on something else.",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Branches</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-08.html",
+    "href": "content/chapter-08.html",
+    "title": "8  Merge conflicts",
+    "section": "",
+    "text": "8.1 What a conflict looks like\nReference: http://www.cs.utsa.edu/~cs3443/git/merge-conflicts.html\nA merge conflict happens when two people change the same lines of the same file. Git can’t decide which version is correct, so you have to decide.\nConflicts can happen during git pull, git merge or git stash pop. Git tells you which files have conflicts:\nGit writes both versions into the file and marks them:",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge conflicts</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-08.html#what-a-conflict-looks-like",
+    "href": "content/chapter-08.html#what-a-conflict-looks-like",
+    "title": "8  Merge conflicts",
+    "section": "",
+    "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\n&lt;h1&gt;Welcome to our shop&lt;/h1&gt;\n=======\n&lt;h1&gt;Welcome to the HTL shop&lt;/h1&gt;\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; main\n\nBetween &lt;&lt;&lt;&lt;&lt;&lt;&lt; and =======: your version (VS Code calls it Current Change).\nBetween ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt;: the version coming in (VS Code calls it Incoming Change).",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge conflicts</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-08.html#solve-a-conflict",
+    "href": "content/chapter-08.html#solve-a-conflict",
+    "title": "8  Merge conflicts",
+    "section": "8.2 Solve a conflict",
+    "text": "8.2 Solve a conflict\n\nOpen the file. VS Code shows buttons above each conflict: Accept Current Change, Accept Incoming Change, Accept Both Changes.\nChoose a button, or edit the lines by hand until the code is correct.\nMake sure all markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;) are gone.\nTest your code. Does it still work?\nStage and commit the solved files:\n\ngit add &lt;file&gt;\ngit commit -m \"Merge main into login-page\"\n💡 Talk to your team mate if you are not sure which version is correct.\n💡 Want to start over? git merge --abort cancels the merge and brings back the state from before.",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Merge conflicts</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-09.html",
+    "href": "content/chapter-09.html",
+    "title": "9  Pull requests and issues",
+    "section": "",
+    "text": "9.1 Pull requests\nA pull request (PR) is a request on GitHub: “Please merge my branch into main.”\nBefore the merge, your team can:\nHow to create a pull request:",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Pull requests and issues</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-09.html#pull-requests",
+    "href": "content/chapter-09.html#pull-requests",
+    "title": "9  Pull requests and issues",
+    "section": "",
+    "text": "look at all your changes,\nwrite comments and ask questions,\nask you to improve something. You simply commit and push to the same branch, and the pull request updates automatically.\n\n\n\nUpdate your branch with main and push it (see Keep your branch up to date).\nOpen the repository on GitHub. Click Pull requests → New pull request.\nChoose main as base and your branch as compare.\nWrite a title and a short description of what you did. Click Create pull request.\nA team mate reviews the changes and approves them.\nClick Merge pull request. Then click Delete branch to remove the branch on GitHub.\nOn your computer, switch back to main, get the merge and delete your local branch:\n\ngit switch main\ngit pull\ngit branch -d &lt;branch-name&gt;",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Pull requests and issues</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-09.html#link-commits-and-pull-requests-to-issues",
+    "href": "content/chapter-09.html#link-commits-and-pull-requests-to-issues",
+    "title": "9  Pull requests and issues",
+    "section": "9.2 Link commits and pull requests to issues",
+    "text": "9.2 Link commits and pull requests to issues\nIn our projects, we plan the work with GitHub issues. Each issue has a number, e.g. #12.\nMention the issue in a commit message. The commit then appears in the history of the issue:\ngit commit -m \"Add input validation to login form #12\"\nClose the issue automatically with a keyword like closes, fixes or resolves. You can use it in a commit message or in the description of the pull request:\ngit commit -m \"Fix crash when user list is empty, fixes #12\"\nThe issue is closed as soon as the commit or pull request is merged into main.\n💡 You can also create a branch directly from an issue: open the issue on GitHub and click Create a branch under Development. GitHub names the branch after the issue, e.g. 12-fix-menu-crash.",
+    "crumbs": [
+      "Teamwork",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Pull requests and issues</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-10.html",
+    "href": "content/chapter-10.html",
+    "title": "10  Exercises",
+    "section": "",
+    "text": "10.1 Ask the Git tutor\nWork in pairs (person A and person B).\nPractice more on https://learngitbranching.js.org. It shows what happens to your branches as a picture.\nStuck with an exercise, an error message or a command? Ask the Git tutor chat. It knows this tutorial and answers in German or English:\nhttps://novedu.at/m1fmu0jlm4",
+    "crumbs": [
+      "Practice",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-10.html#ask-the-git-tutor",
+    "href": "content/chapter-10.html#ask-the-git-tutor",
+    "title": "10  Exercises",
+    "section": "",
+    "text": "Write what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises above, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
+    "crumbs": [
+      "Practice",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-10.html#check-what-you-learned",
+    "href": "content/chapter-10.html#check-what-you-learned",
+    "title": "10  Exercises",
+    "section": "10.2 Check what you learned",
+    "text": "10.2 Check what you learned\nAnswer eight questions about this tutorial in the Novedu quiz. You write your answers in your own words, in English or German, and you get feedback for each answer:\nhttps://novedu.at/fvlwtss7pl\n💡 The questions are about the why, not only about the commands. Explain your answer like you would explain it to a team mate.",
+    "crumbs": [
+      "Practice",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-11.html",
+    "href": "content/chapter-11.html",
+    "title": "11  Background: centralized vs. distributed version control",
+    "section": "",
+    "text": "11.1 Centralized version control (e.g. Subversion)\nThis chapter is optional. It explains why Git works the way it does.\nReference: https://codentrick.com/architecture-and-design-of-subversion-svn-part-1/\nOlder tools like Subversion (SVN) use a single central server:",
+    "crumbs": [
+      "Background",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Background: centralized vs. distributed version control</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-11.html#centralized-version-control-eg-subversion",
+    "href": "content/chapter-11.html#centralized-version-control-eg-subversion",
+    "title": "11  Background: centralized vs. distributed version control",
+    "section": "",
+    "text": "The history is stored only on the server.\nEach developer only has a working copy of the files (svn checkout), without the history.\nA commit sends the changes directly to the server. Without a network connection you can’t commit.",
+    "crumbs": [
+      "Background",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Background: centralized vs. distributed version control</span>"
+    ]
+  },
+  {
+    "objectID": "content/chapter-11.html#distributed-version-control-git",
+    "href": "content/chapter-11.html#distributed-version-control-git",
+    "title": "11  Background: centralized vs. distributed version control",
+    "section": "11.2 Distributed version control (Git)",
+    "text": "11.2 Distributed version control (Git)\n\nReference: https://www.geeksforgeeks.org/git-features/\nWith Git, every developer has a complete copy of the repository, including the full history:\n\nYou can commit, look at the history and create branches without a network connection.\nYou decide when to share your commits with git push.\nIf the server breaks, every clone is a complete backup.\nYou can push the same repository to several remotes, e.g. GitHub and a school server.",
+    "crumbs": [
+      "Background",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Background: centralized vs. distributed version control</span>"
+    ]
+  },
+  {
+    "objectID": "content/see-also.html",
+    "href": "content/see-also.html",
+    "title": "See also",
+    "section": "",
+    "text": "Pro Git book (free, also available in German): https://git-scm.com/book\nLearn Git Branching (interactive): https://learngitbranching.js.org\nVideo tutorial: https://www.youtube.com/watch?v=M2tz-GASzR8",
+    "crumbs": [
+      "See also"
+    ]
+  }
+]
