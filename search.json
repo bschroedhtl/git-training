@@ -14,7 +14,7 @@
     "href": "content/ask-the-git-tutor.html",
     "title": "Ask the Git tutor",
     "section": "",
-    "text": "Stuck with a command, an error message or an exercise? Ask the Git tutor chat. It knows this tutorial and answers in German or English. Keep it open while you work through the chapters:\n\n\n\n\n\n\nTipGit tutor\n\n\n\nHints and guiding questions first, in German or English.\n\n▶ Ask the Git tutor on novedu.at\n\n\n\n\nWrite what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises in chapter 10, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
+    "text": "Stuck with a command, an error message or an exercise? Ask the Git tutor chat. It knows this tutorial and answers in German or English. Keep it open while you work through the chapters:\n\n\n\n\n\n\nTipGit tutor\n\n\n\nHints and guiding questions first, in German or English.\n\n▶ Ask the Git tutor on app.novedu.at\n\n\n\n\nWrite what you already tried and what Git printed. Then you get a useful answer.\nFor the exercises in chapter 10, the tutor asks you a question first instead of giving you the solution right away. If you are really stuck, say so and you get the answer.\n⚠️ Never paste passwords or tokens into the chat.",
     "crumbs": [
       "Ask the Git tutor"
     ]
@@ -464,7 +464,7 @@
     "href": "content/chapter-10.html#check-what-you-learned",
     "title": "10  Exercises",
     "section": "",
-    "text": "NoteQuiz: Git basics\n\n\n\n\n▶ Take the quiz on novedu.at",
+    "text": "NoteQuiz: Git basics\n\n\n\n\n▶ Take the quiz on app.novedu.at",
     "crumbs": [
       "Practice",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Exercises</span>"
